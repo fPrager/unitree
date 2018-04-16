@@ -1,0 +1,19 @@
+{
+  "name": "unitree-renderer",
+  "version": "0.0.1",
+  "description": "a node package to create a combined info viz",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fPrager/unitree.git"
+  },
+  "author": "Fabian Prager - https://github.com/fPrager",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fPrager/unitree/issues"
+  },
+  "homepage": "https://github.com/fPrager/unitree#readme"
+}
