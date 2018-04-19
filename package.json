@@ -2,7 +2,7 @@
   "name": "unitree-renderer",
   "version": "0.0.1",
   "description": "a node package to create a combined info viz",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf dist/ && babel ./src/ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
