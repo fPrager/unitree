@@ -1,6 +1,6 @@
 {
   "name": "unitree-renderer",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "a node package to create a combined info viz",
   "main": "dist/index.js",
   "scripts": {
@@ -36,7 +36,6 @@
     "babel-plugin-transform-runtime": "^6.22.0",
     "babel-preset-env": "^1.6.1",
     "babel-preset-react": "^6.23.0",
-    "babel-runtime": "^6.22.0",
     "babelify": "^8.0.0",
     "eslint": "^4.16.0",
     "eslint-config-airbnb": "^16.1.0",
