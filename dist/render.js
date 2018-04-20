@@ -8,5 +8,5 @@ exports.render = undefined;
 var _loadImageSimple = require('./layer/loadImageSimple');
 
 var render = exports.render = function render() {
-    return (0, _loadImageSimple.loadImageSimple)('https://s3.eu-central-1.amazonaws.com/unitree/imageOrig.png', { stretch: true });
+    return (0, _loadImageSimple.loadImageSimple)('https://s3.eu-central-1.amazonaws.com/unitree/people.png', { stretch: true });
 };

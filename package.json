@@ -1,12 +1,12 @@
 {
   "name": "unitree-image",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "a node package to create a combined info viz",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rimraf dist/ && babel ./src/ --out-dir dist/ --ignore ./node_modules,./.babelrc,./package.json,./npm-debug.log --copy-files",
-    "start": "npm run build && node dist/index.js"
+    "start": "npm run build && node dist/save.js"
   },
   "repository": {
     "type": "git",
