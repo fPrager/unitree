@@ -1,6 +1,6 @@
 {
   "name": "unitree-renderer",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "a node package to create a combined info viz",
   "main": "dist/index.js",
   "scripts": {
@@ -23,19 +23,19 @@
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-eslint": "^8.0.1",
-    "babel-plugin-add-module-exports": "^0.2.1",
-    "babel-preset-es2015": "^6.24.1",
-    "rimraf": "^2.6.2",
     "babel-core": "^6.23.1",
+    "babel-eslint": "^8.0.1",
     "babel-jest": "^20.0.3",
     "babel-loader": "^7.1",
+    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-plugin-transform-class-properties": "^6.22.0",
     "babel-plugin-transform-decorators-legacy": "^1.3.4",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.22.0",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-react": "^6.23.0",
+    "babel-runtime": "^6.26.0",
     "babelify": "^8.0.0",
     "eslint": "^4.16.0",
     "eslint-config-airbnb": "^16.1.0",
@@ -44,6 +44,7 @@
     "eslint-plugin-babel": "^4.1.2",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-react": "^7.4.0"
+    "eslint-plugin-react": "^7.4.0",
+    "rimraf": "^2.6.2"
   }
 }

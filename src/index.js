@@ -1,3 +1,5 @@
 import { render } from './render';
 
-render();
+export default {
+    render,
+};
