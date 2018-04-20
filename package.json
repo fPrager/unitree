@@ -1,5 +1,5 @@
 {
-  "name": "unitree-renderer",
+  "name": "unitree-image",
   "version": "0.0.5",
   "description": "a node package to create a combined info viz",
   "main": "dist/index.js",
