@@ -1,4 +1,4 @@
-const Canvas = require('canvas');
+const Canvas = require('canvas-aws-prebuilt');
 
 /**
  * Defines a new instance of the rainyday.js.

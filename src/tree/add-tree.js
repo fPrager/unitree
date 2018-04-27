@@ -2,7 +2,7 @@ import Jimp from 'jimp';
 import renderSettings from '../../render-settings.json';
 
 
-const Canvas = require('canvas');
+const Canvas = require('canvas-aws-prebuilt');
 
 const startX = 180;
 const startY = 550;

@@ -11,7 +11,7 @@ const yrno = require('yr.no-forecast')({
     },
 });
 
-const Canvas = require('canvas');
+const Canvas = require('canvas-aws-prebuilt');
 
 console.log(settings.location);
 
