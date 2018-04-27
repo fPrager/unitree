@@ -21,6 +21,10 @@ var _jimp = require('jimp');
 
 var _jimp2 = _interopRequireDefault(_jimp);
 
+var _moment = require('moment');
+
+var _moment2 = _interopRequireDefault(_moment);
+
 var _addRain = require('./add-rain');
 
 var _apiSettings = require('../../api-settings');
@@ -48,29 +52,25 @@ var LOCATION = {
 
 var getRainFactor = function () {
     var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee() {
-        var weather, weatherData;
+        var weather, weatherData, rain;
         return _regenerator2.default.wrap(function _callee$(_context) {
             while (1) {
                 switch (_context.prev = _context.next) {
                     case 0:
-                        console.log('start');
-                        _context.next = 3;
+                        _context.next = 2;
                         return yrno.getWeather(LOCATION);
 
-                    case 3:
+                    case 2:
                         weather = _context.sent;
+                        _context.next = 5;
+                        return weather.getForecastForTime((0, _moment2.default)(new Date()));
 
-                        console.log('got weather');
-                        _context.next = 7;
-                        return weather.getForecastForTime(new Date());
-
-                    case 7:
+                    case 5:
                         weatherData = _context.sent;
+                        rain = Number(weatherData.rain.split(' ')[0]);
+                        return _context.abrupt('return', rain);
 
-
-                        console.log(weatherData);
-
-                    case 9:
+                    case 8:
                     case 'end':
                         return _context.stop();
                 }
@@ -91,7 +91,7 @@ var addRainDrops = function addRainDrops(image, percent) {
             var img = new Canvas.Image();
             img.src = buffer;
             var rainday = new _addRain.RainyDay({
-                image: img, width: image.bitmap.width, height: image.bitmap.height, opacity: 1
+                image: img, width: image.bitmap.width, height: image.bitmap.height, opacity: 1, blur: percent / 10
             }, canvas);
             rainday.trail = rainday.TRAIL_SMUDGE;
             rainday.rain([[1, 2, percent], [2, 4, percent / 10]], 0.1);
@@ -119,16 +119,14 @@ var addWeatherEffect = exports.addWeatherEffect = function () {
 
                     case 2:
                         rainfactor = _context2.sent;
+                        _context2.next = 5;
+                        return addRainDrops(image, Math.min(rainfactor, 10) * 10);
 
-                        console.log(rainfactor);
-                        _context2.next = 6;
-                        return addRainDrops(image, 1);
-
-                    case 6:
+                    case 5:
                         rainedImage = _context2.sent;
                         return _context2.abrupt('return', rainedImage);
 
-                    case 8:
+                    case 7:
                     case 'end':
                         return _context2.stop();
                 }
