@@ -40,7 +40,7 @@ var yrno = require('yr.no-forecast')({
     }
 });
 
-var Canvas = require('canvas');
+var Canvas = require('canvas-aws-prebuilt');
 
 console.log(_apiSettings2.default.location);
 

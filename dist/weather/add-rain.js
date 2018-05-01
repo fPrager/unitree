@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-var Canvas = require('canvas');
+var Canvas = require('canvas-aws-prebuilt');
 
 /**
  * Defines a new instance of the rainyday.js.

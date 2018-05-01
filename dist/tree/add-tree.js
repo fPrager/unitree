@@ -19,7 +19,7 @@ var _renderSettings2 = _interopRequireDefault(_renderSettings);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Canvas = require('canvas');
+var Canvas = require('canvas-aws-prebuilt');
 
 var startX = 180;
 var startY = 550;
