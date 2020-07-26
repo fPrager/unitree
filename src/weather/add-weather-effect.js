@@ -23,8 +23,7 @@ const LOCATION = {
 
 const getRainFactor = async () => {
     const weather = await yrno.getWeather(LOCATION);
-    const weatherData = await weather.getForecastForTime(new Date());
-    console.log(weatherData);
+changed    const weatherData = await weather.getForecastForTime(new Date() + '');
     const rain = Number(weatherData.rain.split(' ')[0]);
 
     return rain;

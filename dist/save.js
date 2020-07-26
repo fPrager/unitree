@@ -3,5 +3,5 @@
 var _render = require('./render');
 
 (0, _render.render)().then(function (image) {
-    image.write('test.png');
+    image.write('result.png');
 });

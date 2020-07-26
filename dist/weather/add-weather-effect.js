@@ -65,16 +65,14 @@ var getRainFactor = function () {
                     case 2:
                         weather = _context.sent;
                         _context.next = 5;
-                        return weather.getForecastForTime(new Date());
+                        return weather.getForecastForTime(new Date() + '');
 
                     case 5:
                         weatherData = _context.sent;
-
-                        console.log(weatherData);
                         rain = Number(weatherData.rain.split(' ')[0]);
                         return _context.abrupt('return', rain);
 
-                    case 9:
+                    case 8:
                     case 'end':
                         return _context.stop();
                 }
