@@ -65,7 +65,7 @@ var getRainFactor = function () {
                     case 2:
                         weather = _context.sent;
                         _context.next = 5;
-                        return weather.getForecastForTime(new Date() + '');
+                        return weather.getForecastForTime((0, _moment2.default)().add(1, 'days').utc());
 
                     case 5:
                         weatherData = _context.sent;
