@@ -11,7 +11,7 @@ const yrno = require('yr.no-forecast')({
     },
 });
 
-const Canvas = require('canvas-aws-prebuilt');
+const { createCanvas, Image } = require('canvas');
 
 console.log(settings.location);
 
@@ -23,7 +23,8 @@ const LOCATION = {
 
 const getRainFactor = async () => {
     const weather = await yrno.getWeather(LOCATION);
-    const weatherData = await weather.getForecastForTime(moment(new Date()));
+    const weatherData = await weather.getForecastForTime(new Date());
+    console.log(weatherData);
     const rain = Number(weatherData.rain.split(' ')[0]);
 
     return rain;
@@ -33,13 +34,14 @@ const getRainFactor = async () => {
 const addRainDrops = (image, percent) => {
     return new Promise((resolve) => {
         image.getBuffer(Jimp.MIME_PNG, (error, buffer) => {
-            const canvas = new Canvas(image.bitmap.width, image.bitmap.height);
+            const canvas = createCanvas(image.bitmap.width, image.bitmap.height);
             // const ctx = canvas.getContext('2d');
-            const img = new Canvas.Image();
+            const img = new Image();
             img.src = buffer;
             const rainday = new RainyDay({
                 image: img, width: image.bitmap.width, height: image.bitmap.height, opacity: 1, blur: percent / 10,
             }, canvas);
+            console.log('rainday', rainday);
             rainday.trail = rainday.TRAIL_SMUDGE;
             rainday.rain([[1, 2, percent], [2, 4, percent / 10]], 0.1);
 

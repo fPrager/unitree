@@ -1,5 +1,5 @@
 import { render } from './render';
 
 render().then((image) => {
-    image.write('test.png');
+    image.write('result.png');
 });

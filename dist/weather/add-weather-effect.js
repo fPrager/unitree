@@ -40,7 +40,9 @@ var yrno = require('yr.no-forecast')({
     }
 });
 
-var Canvas = require('canvas-aws-prebuilt');
+var _require = require('canvas'),
+    createCanvas = _require.createCanvas,
+    Image = _require.Image;
 
 console.log(_apiSettings2.default.location);
 
@@ -63,14 +65,16 @@ var getRainFactor = function () {
                     case 2:
                         weather = _context.sent;
                         _context.next = 5;
-                        return weather.getForecastForTime((0, _moment2.default)(new Date()));
+                        return weather.getForecastForTime(new Date());
 
                     case 5:
                         weatherData = _context.sent;
+
+                        console.log(weatherData);
                         rain = Number(weatherData.rain.split(' ')[0]);
                         return _context.abrupt('return', rain);
 
-                    case 8:
+                    case 9:
                     case 'end':
                         return _context.stop();
                 }
@@ -86,13 +90,14 @@ var getRainFactor = function () {
 var addRainDrops = function addRainDrops(image, percent) {
     return new _promise2.default(function (resolve) {
         image.getBuffer(_jimp2.default.MIME_PNG, function (error, buffer) {
-            var canvas = new Canvas(image.bitmap.width, image.bitmap.height);
+            var canvas = createCanvas(image.bitmap.width, image.bitmap.height);
             // const ctx = canvas.getContext('2d');
-            var img = new Canvas.Image();
+            var img = new Image();
             img.src = buffer;
             var rainday = new _addRain.RainyDay({
                 image: img, width: image.bitmap.width, height: image.bitmap.height, opacity: 1, blur: percent / 10
             }, canvas);
+            console.log('rainday', rainday);
             rainday.trail = rainday.TRAIL_SMUDGE;
             rainday.rain([[1, 2, percent], [2, 4, percent / 10]], 0.1);
 

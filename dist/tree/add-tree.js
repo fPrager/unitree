@@ -19,7 +19,8 @@ var _renderSettings2 = _interopRequireDefault(_renderSettings);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Canvas = require('canvas-aws-prebuilt');
+var _require = require('canvas'),
+    createCanvas = _require.createCanvas;
 
 var startX = 180;
 var startY = 550;
@@ -167,7 +168,7 @@ BranchCollection.prototype = {
 var addTree = exports.addTree = function addTree(image) {
     return new _promise2.default(function (resolve) {
         image.getBuffer(_jimp2.default.MIME_PNG, function (error, buffer) {
-            canvas = new Canvas(image.bitmap.width, image.bitmap.height);
+            canvas = createCanvas(image.bitmap.width, image.bitmap.height);
             // const ctx = canvas.getContext('2d');
             branches = new BranchCollection();
             var n = 2 + Math.random() * 3;

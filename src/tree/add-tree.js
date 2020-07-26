@@ -2,7 +2,7 @@ import Jimp from 'jimp';
 import renderSettings from '../../render-settings.json';
 
 
-const Canvas = require('canvas-aws-prebuilt');
+const { createCanvas } = require('canvas');
 
 const startX = 180;
 const startY = 550;
@@ -149,7 +149,7 @@ BranchCollection.prototype = {
 export const addTree = (image) => {
     return new Promise((resolve) => {
         image.getBuffer(Jimp.MIME_PNG, (error, buffer) => {
-            canvas = new Canvas(image.bitmap.width, image.bitmap.height);
+            canvas = createCanvas(image.bitmap.width, image.bitmap.height);
             // const ctx = canvas.getContext('2d');
             branches = new BranchCollection();
             const n = 2 + Math.random() * 3;

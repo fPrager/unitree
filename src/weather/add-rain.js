@@ -1,4 +1,4 @@
-const Canvas = require('canvas-aws-prebuilt');
+const { createCanvas } = require('canvas');
 
 /**
  * Defines a new instance of the rainyday.js.
@@ -100,7 +100,7 @@ RainyDay.prototype.animateDrops = function () {
  * Create the helper canvas for rendering raindrop reflections.
  */
 RainyDay.prototype.prepareReflections = function () {
-    this.reflected = new Canvas(this.canvas.width / this.options.reflectionScaledownFactor, this.canvas.height / this.options.reflectionScaledownFactor);
+    this.reflected = createCanvas(this.canvas.width / this.options.reflectionScaledownFactor, this.canvas.height / this.options.reflectionScaledownFactor);
     const ctx = this.reflected.getContext('2d');
     ctx.drawImage(this.img, this.options.crop[0], this.options.crop[1], this.options.crop[2], this.options.crop[3], 0, 0, this.reflected.width, this.reflected.height);
 };
@@ -109,7 +109,7 @@ RainyDay.prototype.prepareReflections = function () {
  * Create the glass canvas.
  */
 RainyDay.prototype.prepareGlass = function () {
-    this.glass = new Canvas(this.canvas.width, this.canvas.height);
+    this.glass = createCanvas(this.canvas.width, this.canvas.height);
     this.context = this.glass.getContext('2d');
 };
 
@@ -525,8 +525,8 @@ RainyDay.prototype.COLLISION_SIMPLE = function (drop, collisions) {
  * Resizes canvas, draws original image and applies blurring algorithm.
  */
 RainyDay.prototype.prepareBackground = function () {
-    this.background = new Canvas(this.canvas.width, this.canvas.height);
-    this.clearbackground = new Canvas(this.canvas.width, this.canvas.height);
+    this.background = createCanvas(this.canvas.width, this.canvas.height);
+    this.clearbackground = createCanvas(this.canvas.width, this.canvas.height);
     this.clearbackground.width = this.canvas.width;
     this.clearbackground.height = this.canvas.height;
 

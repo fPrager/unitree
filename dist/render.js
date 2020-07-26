@@ -29,7 +29,7 @@ var render = exports.render = function () {
                 switch (_context.prev = _context.next) {
                     case 0:
                         _context.next = 2;
-                        return (0, _loadImageSimple.loadImageSimple)('https://s3.eu-central-1.amazonaws.com/unitree/imageOrig.png', { stretch: true });
+                        return (0, _loadImageSimple.loadImageSimple)('imageOrig.png', { stretch: true });
 
                     case 2:
                         image = _context.sent;
@@ -43,7 +43,7 @@ var render = exports.render = function () {
 
                     case 8:
                         imageWithWeather = _context.sent;
-                        return _context.abrupt('return', imageWithTree);
+                        return _context.abrupt('return', imageWithWeather);
 
                     case 10:
                     case 'end':
