@@ -23,7 +23,7 @@
     "canvas": "^2.6.1",
     "fs": "0.0.1-security",
     "jimp": "^0.14.0",
-    "moment": "^2.27.0",
+    "moment": "^2.29.2",
     "yr.no-forecast": "^2.1.0"
   },
   "devDependencies": {
